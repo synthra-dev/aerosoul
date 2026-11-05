@@ -22,11 +22,13 @@ Die gesamte Elektronik sitzt in der Basis.
 
 ## 2. Funktionsprinzip
 
-1. Die Pumpe fördert kontinuierlich und langsam, im Mittel 0,25 mL/min (~5 U/min). Die Dosierkammer (~20 µL) puffert.
-2. Der NTC im Boom misst den Luftstrom: Ausatemluft ist warm (~34 °C), Einatemluft kühl. Daraus ergeben sich Phase und Mundatmung.
-3. Der Mesh-Treiber läuft nur während der Einatmung (~40 % der Zeit), bei ~108 kHz.
-4. Der Strom durch den Mesh-Treiber dient als Diagnose: Eine trockene Scheibe hat eine andere Impedanz als eine benetzte. Daraus erkennt die Firmware „Tank leer“ und „Leitung unterbrochen“.
-5. Morgens dreht die Pumpe rückwärts und holt das Wasser aus der Leitung zurück in den Tank, danach ist die Leitung trocken.
+1. Der NTC im Boom misst den Luftstrom: Ausatemluft ist warm (~34 °C), Einatemluft kühl. Daraus ergeben sich Phase und Mundatmung.
+2. Der Mesh-Treiber läuft nur während der Einatmung (~40 % der Zeit), bei ~108 kHz.
+3. **Die Pumpe fördert nach Verbrauch, nicht kontinuierlich.** Die Firmware summiert die Sprühzeit der Scheibe und multipliziert sie mit der kalibrierten Zerstäubungsrate (µL/s). Genau diese Menge pumpt sie nach. Weil jeder Schritt ein festes Volumen bewegt (~0,05 mL/U), dosiert der Schrittmotor exakt.
+4. Die Dosierkammer (~20 µL) wird bewusst knapp unter voll gehalten. Eine überfüllte Kammer tropft, eine leicht unterfüllte sprüht nur etwas weniger.
+5. **Korrektur über den Mesh-Strom:** Eine trockene Scheibe hat eine andere Impedanz als eine benetzte. Bei Anzeichen von Trockenheit pumpt die Firmware zusätzlich nach. Bleibt die Scheibe trotz Nachpumpen trocken, meldet sie „Tank leer“ oder „Leitung unterbrochen“.
+6. Wird einige Minuten keine Mundatmung erkannt, stoppt die Pumpe und zieht einige µL zurück, damit nichts nachsickert.
+7. Morgens dreht die Pumpe rückwärts und holt das Wasser aus der Leitung zurück in den Tank, danach ist die Leitung trocken.
 
 ## 3. Leistungsbudget
 
@@ -66,4 +68,5 @@ C wird an der realen Scheibe gemessen. Der MOSFET braucht ≥ 100 V Sperrspannun
 1. Mesh-Scheibe mit grober Lochung (Ziel ~25 µm Tropfen): Lieferant offen, ggf. Sonderanfertigung
 2. Ob das 108-kHz-Signal über 1,8 m Kabel EMV-konform bleibt: abgeschirmtes oder verdrilltes Paar, Messung nötig
 3. TMC2209 läuft bei 5 V nahe seiner Mindestspannung (4,75 V). Spannungseinbruch am Kabel prüfen
-4. Kopfband: Rückenschläfer liegen auf dem Hinterkopf, deshalb Band über den Scheitel, nichts am Hinterkopf
+4. Ob der Mesh-Strom neben „trocken“ und „benetzt“ auch „überfüllt“ erkennen lässt. Falls nicht, braucht die Dosierkammer einen eigenen Füllstandssensor, und damit doch Elektronik im Headset.
+5. Kopfband: Rückenschläfer liegen auf dem Hinterkopf, deshalb Band über den Scheitel, nichts am Hinterkopf
