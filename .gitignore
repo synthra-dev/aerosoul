@@ -1,2 +1,3 @@
 cad/concept/out/
 __pycache__/
+design/render/_*_raw.png
