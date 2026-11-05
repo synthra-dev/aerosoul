@@ -12,6 +12,8 @@ Basis-PCB,D1,ESD-Schutz USB,USBLC6-2SC6,STMicroelectronics,1,0.10,Standardteil,
 Basis-PCB,F1,PTC-Sicherung 1.5 A 1206,generisch,generisch,1,0.05,Standardteil,
 Basis-PCB,J2,3.5-mm-TRRS-Buchse 4-polig,PJ-320 (Typ),generisch,1,0.10,LCSC prüfen,Headset-Anschluss
 Basis-PCB,SW1,Taster,generisch 6x6 mm,generisch,1,0.03,Standardteil,Start/Stop
+Basis-PCB,RV1,Drehpotentiometer 10 kOhm linear ohne Rastung mit Achse,RK09-Serie (Typ),Alps Alpine,1,0.40,LCSC prüfen,Stufenlose Intensität; absolute Stellung auch im Dunkeln fühlbar
+Basis-Mechanik,K2,Drehknopf griffig,Sonderteil oder generisch,tbd,1,0.30,Konstruktion,Markierung fühlbar
 Basis-PCB,LED1-2,LED warmweiß + amber 0603,generisch,generisch,2,0.02,Standardteil,Gedimmt für die Nacht
 Basis-PCB,C/R div.,Passivteile (~25 Stk),generisch,generisch,1,0.40,Standardteil,Entkopplung Filter Pull-ups
 Basis-PCB,PCB,Leiterplatte 2-lagig ~70x45 mm bestückt,JLCPCB,JLCPCB,1,3.00,Schätzung,Fertigung + Bestückung ohne Bauteile
@@ -24,7 +26,7 @@ Headset,H1,Kopfband (Federstahl + TPU-Hülle + Polster),Sonderteil,eigen,1,6.00,
 Headset,H2,Boom biegbar (Al-Draht 2 mm in Silikonhülle) ~11 cm,Sonderteil,eigen,1,2.00,Konstruktion,Führt Schlauch und Kabel
 Headset,H3,NTC 10 kOhm Glasperle schnell,B57540G0103F000 (Kandidat),TDK,1,0.60,Verfügbarkeit prüfen,Kurze Ansprechzeit für Atemerkennung
 Headset,H4,Kabel 4-adrig 2x verdrillt TPE 1.8 m mit TRRS-Stecker,Sonderteil (Konfektion),tbd,1,2.50,Lieferant wählen,Mit Schlauch im gemeinsamen Mantel
-Wochenset,W1,Mesh-Zerstäuberscheibe 16 mm 108 kHz Edelstahl,Standard: generisch / Ziel: grobe Sonderlochung,tbd,1,0.80,KRITISCH: Lieferant offen,Standardscheiben ~3-5 µm zu fein; Ziel ~25 µm Tropfen
+Wochenset,W1,Mesh-Zerstäuberscheibe 10-13 mm ~108-110 kHz Edelstahl (Größe im Labortest),Standard: generisch / Ziel: grobe Sonderlochung,tbd,1,0.80,KRITISCH: Lieferant offen,Standardscheiben ~3-5 µm zu fein; Ziel ~25 µm Tropfen
 Wochenset,W2,Sprühkopf mit Dosierkammer ~20 µL + Dichtung,Sonderteil (Proto: SLA biokompatibles Harz),eigen,1,1.20,Konstruktion,Klickt in Boom-Spitze; Federkontakte zur Scheibe
 Wochenset,W3,Pumpenschlauch Silikon platinvernetzt ID 0.8 mm ~10 cm,generisch medizinisch,tbd,1,0.30,Lieferant wählen,Passend zur Pumpe
 Wochenset,W4,Mikroschlauch PE medizinisch ID 0.5 mm 1.5 m,generisch (Infusions-Mikroleitung),tbd,1,0.60,Lieferant wählen,

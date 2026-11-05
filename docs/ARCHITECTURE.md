@@ -28,7 +28,8 @@ Die gesamte Elektronik sitzt in der Basis.
 4. Die Dosierkammer (~20 µL) wird bewusst knapp unter voll gehalten. Eine überfüllte Kammer tropft, eine leicht unterfüllte sprüht nur etwas weniger.
 5. **Korrektur über den Mesh-Strom:** Eine trockene Scheibe hat eine andere Impedanz als eine benetzte. Bei Anzeichen von Trockenheit pumpt die Firmware zusätzlich nach. Bleibt die Scheibe trotz Nachpumpen trocken, meldet sie „Tank leer“ oder „Leitung unterbrochen“.
 6. Wird einige Minuten keine Mundatmung erkannt, stoppt die Pumpe und zieht einige µL zurück, damit nichts nachsickert.
-7. Morgens dreht die Pumpe rückwärts und holt das Wasser aus der Leitung zurück in den Tank, danach ist die Leitung trocken.
+7. **Intensität stufenlos per Drehknopf:** Ein Potentiometer ohne Rastung an einem ADC-Eingang skaliert die Sprühmenge pro Atemzug kontinuierlich (z. B. 20–100 %). Die Pumpe folgt automatisch über Punkt 3. Ein Potentiometer statt Drehgeber, weil die absolute Stellung auch im Dunkeln fühlbar bleibt und nach Stromausfall erhalten ist.
+8. Morgens dreht die Pumpe rückwärts und holt das Wasser aus der Leitung zurück in den Tank, danach ist die Leitung trocken.
 
 ## 3. Leistungsbudget
 
@@ -54,6 +55,8 @@ Stecker: 3,5-mm-TRRS (4 Kontakte, billig, robust). Kurzschluss beim Einstecken w
 ## 5. Dimensionierung Mesh-Treiber
 
 Resonanz zwischen Spule und Piezo-Kapazität bei 108 kHz: L = 1 / ((2πf)² · C)
+
+Scheibengröße: Ziel 10–13 mm statt der üblichen 16 mm, für einen kleineren, leichteren Sprühkopf. Ob eine kleine Scheibe die nötige Rate von ~10 µL/s während der Einatmung schafft, wird im Labortest gemessen; die Sprührate skaliert grob mit der aktiven Mesh-Fläche.
 
 | C der Scheibe | L |
 |---|---|
